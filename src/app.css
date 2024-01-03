@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(245, 203, 245);
+    font-family: 'Satoshi', sans-serif;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: .25rem;
+    box-shadow: 0 0 7px 2px rgb(215, 115, 215);
+    background-color: white;
+    height: 150px;
+    width: 280px;
+    transform: rotateX(var(--rotate-x, 0));
+    transform-style: preserve-3d;
+    transition: 300ms ;
+    transform: perspective(1000px) rotateX(var(--rotate-x, 0))
+    translateY(var(--translate-y, 0));
+    cursor: pointer;
+
+}
+
+.card:hover {
+    --translate-y: -2px;
+}
+
+.card.flip {
+    --rotate-x: 180deg;
+}
+
+.card .front {
+    left: 0;
+}
+
+.card .front,
+.card .back {
+    position: absolute;
+    padding: 1 rem;
+    backface-visibility: hidden;
+}
+
+.card .back {
+    transform: rotateX(180deg);
+}
+
+.flashcard-option {
+    margin-top: .5rem;
+}
+
+.flashcard-option {
+    margin-top: .35rem;
+    color: #242424;
+    font-size: .85rem;
+}
+
+.flashcard-option:first-child {
+    margin-top: 0;
+}
+
