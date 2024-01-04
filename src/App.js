@@ -1,6 +1,6 @@
-// App.js with corrected import for React Router v6
+// App.js
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import FlashcardList from './FlashcardList';
 import './app.css';
@@ -31,13 +31,21 @@ const FlashcardPage = () => {
       });
   }, []);
 
-  useEffect(() => {}, []);
-
   function decodeString(str) {
     const textArea = document.createElement('textarea');
     textArea.innerHTML = str;
     return textArea.value;
   }
+
+  const handleEdit = (id) => {
+    console.log(`Edit card with id: ${id}`);
+    // Implement your edit logic here
+  };
+
+  const handleDelete = (id) => {
+    console.log(`Delete card with id: ${id}`);
+    // Implement your delete logic here
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -61,6 +69,8 @@ const FlashcardPage = () => {
               question: decodeString(questionItem.question),
               answer: answer,
               options: options.sort(() => Math.random() - 0.5),
+              lastModified: new Date().toLocaleString(), // Adding lastModified field
+              status: 'Noted', // Adding status field
             };
           })
         );
@@ -98,7 +108,7 @@ const FlashcardPage = () => {
         </div>
       </form>
       <div className="container">
-        <FlashcardList flashcards={flashcards} />
+        <FlashcardList flashcards={flashcards} onEdit={handleEdit} onDelete={handleDelete} />
       </div>
     </>
   );
