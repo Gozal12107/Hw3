@@ -9,6 +9,43 @@ body {
     margin: 1rem 2rem;
 }
 
+.header {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+flex-wrap: wrap;
+background-color: white;
+padding: 0 1.5rem;
+box-shadow: 0 0 7px 2px rgb(215, 115, 215);
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: .5rem;
+}
+
+
+.btn {
+    background-color:hsl(351, 81%, 71%);
+    color: white;
+    padding: .5em 1em;
+    border-radius: .3em;
+    border: none; 
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: hsl(351, 66%, 61%);
+}
+
+.form-group > label {
+    color: 0 0 7px 2px rgb(244, 194, 244);
+    font-size: .75rem;
+    margin-bottom: .25rem;
+}
+
 .card-grid {
     display: grid;
     align-items: center;
