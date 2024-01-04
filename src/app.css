@@ -26,6 +26,13 @@ box-shadow: 0 0 7px 2px rgb(215, 115, 215);
   margin: .5rem;
 }
 
+.btn-go-to-flashcards {
+    margin-top: 1rem; /* Adjust the margin as needed */
+  }
+  
+  .btn-go-to-flashcards:hover {
+    background-color: hsl(351, 66%, 61%);
+  }
 
 .btn {
     background-color:hsl(351, 81%, 71%);
